@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  src: url('fonts/open-sans-v29-latin_cyrillic-regular.woff2') format('woff2'),
+    url('fonts/open-sans-v29-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  src: url('fonts/open-sans-v29-latin_cyrillic-700.woff2') format('woff2'),
+    url('fonts/open-sans-v29-latin_cyrillic-700.woff') format('woff');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f1fffc;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+}
