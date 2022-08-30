@@ -6,7 +6,7 @@
 #props
 #JSX
 #state
-#Conte
+#Context
 #события
 #работа с API
 
