@@ -40,10 +40,37 @@
     cursor: pointer;
     line-height: 36px;
     margin-bottom: 10px;
+    transition: color .7s ease-in;
+    transition: text-shadow .7s ease-in;
 }
 
 .item:last-child {
     margin-bottom: 0;
+}
+
+.item:hover {
+    text-shadow:
+        -0 -1px 0 #050706,
+        0 -1px 0 #050706,
+        -0 1px 0 #050706,
+        0 1px 0 #050706,
+        -1px -0 0 #050706,
+        1px -0 0 #050706,
+        -1px 0 0 #050706,
+        1px 0 0 #050706,
+        -1px -1px 0 #050706,
+        1px -1px 0 #050706,
+        -1px 1px 0 #050706,
+        1px 1px 0 #050706,
+        -1px -1px 0 #050706,
+        1px -1px 0 #050706,
+        -1px 1px 0 #050706,
+        1px 1px 0 #050706;
+}
+
+.item:active {
+    color: #050706;
+    text-shadow: none;
 }
 
 @media (max-width: 1024px) {
