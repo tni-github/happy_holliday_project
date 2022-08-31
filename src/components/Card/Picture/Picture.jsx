@@ -1,8 +1,15 @@
-import img from '../../../img/card-bg.png';
+import { useContext } from 'react';
+import { pictureContext } from '../../../context/pictureContext';
 import style from '../Card.module.css';
 
-const Picture = () => (
-    <img src={img} alt="фоновая открытка" className={style.img} />
-);
+
+const Picture = (props) => {
+    const picture = useContext(pictureContext);
+    console.log('picture: ', picture);
+
+    return (
+        <img src={props.img} alt="фоновая открытка" className={style.img} width={840} height={520} />
+    )
+}
 
 export default Picture;
