@@ -1,7 +1,7 @@
 import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import { HolidayContextProvider } from "./context/holidayContext";
+import { HolidaysContextProvider } from "./context/holidaysContext";
 import { PictureContextProvider } from "./context/pictureContext";
 import { TextContextProvider } from "./context/textContext";
 
@@ -14,7 +14,7 @@ const wrapper = {
 const App = () => {
   return (
     <div style={wrapper}>
-      <HolidayContextProvider>
+      <HolidaysContextProvider>
         <PictureContextProvider>
           <TextContextProvider>
 
@@ -24,7 +24,7 @@ const App = () => {
 
           </TextContextProvider>
         </PictureContextProvider>
-      </HolidayContextProvider>
+      </HolidaysContextProvider>
     </div>
   );
 }
