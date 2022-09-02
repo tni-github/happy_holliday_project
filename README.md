@@ -1,3 +1,7 @@
+# Интерактивный сервис поздравлений на React
+
+В проекте используются (планируется использовать): #Create React App для разворачивания приложения #функциональные компоненты #props #JSX #state #Context #события #работа с API
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
