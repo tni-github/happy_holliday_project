@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { URI_API } from "../constants/constants";
 
 export const usePicture = holiday => {
-    const [picture, setPicture] = useState({});
+    const [data, setData] = useState({});
 
     useEffect(() => {
         if (!holiday) return;
@@ -15,12 +15,12 @@ export const usePicture = holiday => {
                 return response.json()
             })
             .then(data => {
-                if (data) {
-                    setPicture(data);
+                if (data.idImg) {
+                    setData(data);
                 }
             })
             .catch(err => console.log('err: ', err));
     }, [holiday]);
 
-    return { picture };
+    return data;
 }
