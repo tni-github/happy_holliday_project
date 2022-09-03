@@ -12,7 +12,6 @@ const wrapper = {
 const btn = {
     display: 'block',
     margin: '20px auto',
-    padding: 'auto',
     width: '300px',
     height: '65px',
     borderRadius: '30px',
@@ -21,6 +20,8 @@ const btn = {
     fontSize: '18px',
     backgroundColor: '#00c78b',
     color: '#ffffff',
+    padding: '20px 0',
+    textAlign: 'center',
 }
 
 const Layout = () => {
@@ -33,7 +34,8 @@ const Layout = () => {
             {idText && idImg && (
                 <Link
                     style={btn}
-                    to={`singleCard/${idText}/${idImg}`}>
+                    to={`singleCard/${idText}/${idImg}`}
+                >
                     Поделиться открыткой
                 </Link>
             )
