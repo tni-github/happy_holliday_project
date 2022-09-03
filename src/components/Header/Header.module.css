@@ -30,6 +30,10 @@
     transition: background-color .3s ease-in-out;
 }
 
+.button:disabled {
+    background-color: #9ca3a1;
+}
+
 .button:hover {
     background-color: #3b9c7f;
 }

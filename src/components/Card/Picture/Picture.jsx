@@ -1,8 +1,23 @@
-import img from '../../../img/card-bg.png';
 import style from '../Card.module.css';
+import CardBG from '../../../img/card-bg.jpg';
+import { useSelector } from 'react-redux';
 
-const Picture = () => (
-    <img src={img} alt="фоновая открытка" className={style.img} />
-);
+const Picture = () => {
+    const { urlImg, loading } = useSelector(state => state.picture);
+
+    return (
+        <img
+            src={loading === 'loading'
+                ? ''
+                : (urlImg === ''
+                    ? CardBG
+                    : urlImg)}
+            alt="фоновая открытка"
+            className={style.img}
+            width={840}
+            height={520}
+        />
+    )
+}
 
 export default Picture;
