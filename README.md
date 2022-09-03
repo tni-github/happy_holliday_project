@@ -9,6 +9,9 @@
 #Context
 #события
 #работа с API
+#Redux
+#Redux Toolkit
+#React-router
 
 # Getting Started with Create React App
 
