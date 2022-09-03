@@ -1,18 +1,25 @@
 import style from './Choices.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchHolidays, setHoliday } from '../../../store/holidaysSlice';
+import { fetchHolidays } from '../../../store/holidaysSlice';
 import { useEffect, useState } from 'react';
 import { fetchText } from '../../../store/textSlice';
 import { fetchPicture } from '../../../store/pictureSlice';
+import { NavLink, useParams } from 'react-router-dom';
 
 const Choices = () => {
     const [isOpenChoices, setIsOpenChoices] = useState(false);
-    const { holiday, holidays, loading } = useSelector(state => state.holidays);
+    const { holidays, loading } = useSelector(state => state.holidays);
     const dispatch = useDispatch();
+
+    const { holiday } = useParams();
 
     useEffect(() => {
         dispatch(fetchHolidays());
-    }, [dispatch])
+        if (holiday) {
+            dispatch(fetchText(holiday));
+            dispatch(fetchPicture(holiday));
+        }
+    }, [dispatch, holiday])
 
     const toggleChoices = () => {
         if (loading !== 'success') return;
@@ -33,13 +40,16 @@ const Choices = () => {
                             className={style.item}
                             key={item[0]}
                             onClick={() => {
-                                dispatch(setHoliday(item[0]));
-                                dispatch(fetchText(item[0]));
-                                dispatch(fetchPicture(item[0]));
                                 toggleChoices();
                             }}
                         >
-                            {item[1]}
+                            <NavLink
+                                to={`card/${item[0]}`}
+                                className={({ isActive }) => (
+                                    isActive ? style.linkActive : ''
+                                )}>
+                                {item[1]}
+                            </NavLink>
                         </li>
                     ))}
                 </ul>

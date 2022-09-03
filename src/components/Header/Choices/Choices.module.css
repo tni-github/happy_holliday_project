@@ -48,6 +48,10 @@
     margin-bottom: 0;
 }
 
+.linkActive {
+    color: #9407beb9;
+}
+
 .item:hover {
     text-shadow:
         -0 -1px 0 #050706,

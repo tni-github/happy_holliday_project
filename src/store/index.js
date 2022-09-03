@@ -9,4 +9,4 @@ export const store = configureStore({
         text: textReducer,
         picture: pictureReducer,
     }
-})
+});

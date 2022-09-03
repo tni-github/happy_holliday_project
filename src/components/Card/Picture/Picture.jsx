@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 const Picture = () => {
     const { urlImg, loading } = useSelector(state => state.picture);
-    console.log('picture: ', urlImg);
 
     return (
         <img

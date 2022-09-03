@@ -10,6 +10,15 @@ export const fetchPicture = createAsyncThunk(
     }
 );
 
+export const fetchPictureId = createAsyncThunk(
+    'picture/fetchPictureId',
+    async (id) => {
+        const res = await fetch(`${URI_API}/image/${id}`);
+        const data = await res.json();
+        return data;
+    }
+);
+
 const pictureSlice = createSlice({
     name: 'picture',
     initialState: {
@@ -20,8 +29,6 @@ const pictureSlice = createSlice({
     extraReducers: {
         [fetchPicture.pending]: (state) => {
             state.loading = 'loading';
-            state.urlImg = '';
-            state.idImg = '';
         },
         [fetchPicture.fulfilled]: (state, action) => {
             state.loading = 'success';
@@ -29,6 +36,20 @@ const pictureSlice = createSlice({
             state.idImg = action.payload.idImg;
         },
         [fetchPicture.rejected]: (state) => {
+            state.loading = 'failed';
+            state.urlImg = '';
+            state.idImg = '';
+        },
+
+        [fetchPictureId.pending]: (state) => {
+            state.loading = 'loading';
+        },
+        [fetchPictureId.fulfilled]: (state, action) => {
+            state.loading = 'success';
+            state.urlImg = action.payload.urlImg;
+            state.idImg = action.payload.idImg;
+        },
+        [fetchPictureId.rejected]: (state) => {
             state.loading = 'failed';
             state.urlImg = '';
             state.idImg = '';
